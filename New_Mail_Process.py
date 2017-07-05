@@ -31,6 +31,28 @@ def main():
     ff = open("../Mail_Classifier/New_Mail.txt", "r")
     text = parseOutText(ff)
     g = open("../Mail_Classifier/NewParsedtext.txt", "a")
+    #g.write(text)
+    #g.write("\n")
+    g.close()
+
+def NVectorizer() :
+
+    main()
+
+    f = open("../Mail_Classifier/NewParsedtext.txt", "r")
+
+    vectorizer = TfidfVectorizer(stop_words='english')
+
+    g = open("../Mail_Classifier/Parsedtext.txt", "r")
+    processed_input_train = vectorizer.fit_transform(g)
+    processed_input = vectorizer.transform(f)
+    
+    return processed_input
+
+def main():
+    ff = open("../Mail_Classifier/New_Mail.txt", "r")
+    text = parseOutText(ff)
+    g = open("../Mail_Classifier/NewParsedtext.txt", "a")
     g.write(text)
     #g.write("\n")
     g.close()
