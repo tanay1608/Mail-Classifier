@@ -27,6 +27,7 @@ def main():
     ff = open("../Mail_Classifier/Train_Mail.txt", "r")
     text = parseOutText(ff)
     g = open("../Mail_Classifier/Parsedtext.txt", "a")
-    #g.write(text)
-    #g.write("\n")
+    g.write(text)
+    g.write("\n")
     g.close()
+
